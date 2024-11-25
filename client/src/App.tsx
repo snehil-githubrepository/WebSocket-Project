@@ -8,7 +8,7 @@ function App() {
   const chatWindowRef = useRef<HTMLDivElement>(null); // Reference for auto-scroll
 
   useEffect(() => {
-    const newSocket = new WebSocket("ws://localhost:8080");
+    const newSocket = new WebSocket("wss://websocket-project-3.onrender.com/");
 
     newSocket.onopen = () => {
       console.log("Connected to the chat server.");

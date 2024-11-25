@@ -1,6 +1,8 @@
 import WebSocket, { WebSocketServer } from "ws";
 import http from "http";
 
+const port = process.env.PORT || 10000;
+
 // Create an HTTP server
 const server = http.createServer(function (req, res) {
   console.log(new Date() + "Received Request for :" + req.url);
@@ -40,6 +42,6 @@ wss.on("connection", function connection(ws) {
   ws.send(JSON.stringify({ message: "Welcome to the chat!" }));
 });
 
-server.listen(8080, function () {
-  console.log(new Date() + " Server is Listening on port 8080");
+server.listen(port, function () {
+  console.log(new Date() + ` Server running on port ${port}`);
 });
